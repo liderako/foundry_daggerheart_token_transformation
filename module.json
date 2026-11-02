@@ -1,0 +1,44 @@
+{
+	"id": "mist-age-transformations",
+	"title": "The Mist Age - Transformations",
+	"description": "An effect marked as a transformation, such as one a domain card's action applies, opens a window where the character's owner picks one of the character's saved looks for the token. When the effect ends, the token returns to its own look.",
+	"version": "1.0.0",
+	"compatibility": {
+		"minimum": "13",
+		"verified": "14"
+	},
+	"authors": [
+		{
+			"name": "asvirido"
+		}
+	],
+	"relationships": {
+		"systems": [
+			{
+				"id": "daggerheart",
+				"type": "system"
+			}
+		]
+	},
+	"esmodules": [
+		"scripts/main.js"
+	],
+	"styles": [
+		"styles/transformations.css"
+	],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		},
+		{
+			"lang": "ru",
+			"name": "Русский",
+			"path": "languages/ru.json"
+		}
+	],
+	"url": "",
+	"manifest": "",
+	"download": ""
+}

@@ -1,0 +1,45 @@
+<div class="mist-transform-body">
+	{{#if effect}}
+		<p class="mist-transform-effect"><i class="fa-solid fa-wand-magic-sparkles" inert></i> {{localize "MIST_TRANSFORM.Picker.FromEffect" effect=effect}}</p>
+	{{/if}}
+	<div class="mist-transform-status">
+		{{#if disguised}}
+			<span><i class="fa-solid fa-mask" inert></i> {{localize "MIST_TRANSFORM.Picker.Disguised"}}</span>
+			<button type="button" data-action="drop"><i class="fa-solid fa-eye" inert></i> {{localize "MIST_TRANSFORM.Picker.Drop"}}</button>
+		{{else}}
+			<span><i class="fa-solid fa-user" inert></i> {{localize "MIST_TRANSFORM.Picker.OwnLook"}}</span>
+		{{/if}}
+	</div>
+	{{#unless hasToken}}
+		<p class="notification warning">{{localize "MIST_TRANSFORM.Picker.NoToken"}}</p>
+	{{/unless}}
+
+	{{#if looks.length}}
+		<div class="mist-transform-looks">
+			{{#each looks as |look|}}
+				<div class="mist-transform-look {{#if look.active}}active{{/if}}" data-look-id="{{look.id}}" data-action="apply" data-tooltip="{{look.label}}">
+					<img src="{{look.img}}" alt="">
+					<span class="mist-transform-label">{{look.label}}</span>
+					<a class="mist-transform-remove" data-action="remove" data-tooltip="{{localize "MIST_TRANSFORM.Picker.Remove"}}"><i class="fa-solid fa-xmark" inert></i></a>
+				</div>
+			{{/each}}
+		</div>
+	{{else}}
+		<p class="hint">{{localize "MIST_TRANSFORM.Picker.Empty"}}</p>
+	{{/if}}
+
+	<details class="mist-transform-add" {{#unless looks.length}}open{{/unless}}>
+		<summary>{{localize "MIST_TRANSFORM.Picker.AddLooks"}}</summary>
+		<div class="mist-transform-add-buttons">
+			{{#if canBrowse}}
+				<button type="button" data-action="addImage"><i class="fa-solid fa-image" inert></i> {{localize "MIST_TRANSFORM.Picker.AddImage"}}</button>
+			{{/if}}
+			<button type="button" data-action="copyTarget" {{#unless target}}disabled{{/unless}}>
+				<i class="fa-solid fa-crosshairs" inert></i>
+				{{#if target}}{{localize "MIST_TRANSFORM.Picker.CopyTarget" name=target}}{{else}}{{localize "MIST_TRANSFORM.Picker.CopyNoTarget"}}{{/if}}
+			</button>
+			<label class="checkbox"><input type="checkbox" name="copyName" {{checked copyName}}> {{localize "MIST_TRANSFORM.Picker.CopyName"}}</label>
+			<button type="button" data-action="saveCurrent"><i class="fa-solid fa-floppy-disk" inert></i> {{localize "MIST_TRANSFORM.Picker.SaveCurrent"}}</button>
+		</div>
+	</details>
+</div>

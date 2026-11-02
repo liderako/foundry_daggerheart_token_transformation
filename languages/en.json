@@ -1,0 +1,29 @@
+{
+	"MIST_TRANSFORM": {
+		"Effect": {
+			"Name": "Transformation",
+			"Hint": "When this effect lands on a character, the character's owner gets a window to choose one of their saved looks for the token. When the effect ends or is disabled, the token returns to its own look. Mark it on a domain card's effect to have the card's action trigger it."
+		},
+		"Hud": {
+			"Tooltip": "Transformation looks"
+		},
+		"Picker": {
+			"Title": "Transformation",
+			"FromEffect": "{effect}: choose a look",
+			"Disguised": "Transformed",
+			"OwnLook": "Own look",
+			"Drop": "Drop transformation",
+			"Empty": "No saved looks yet. Add them below.",
+			"AddLooks": "Add looks",
+			"AddImage": "Add image",
+			"CopyTarget": "Copy {name}",
+			"CopyNoTarget": "Target a token to copy it",
+			"CopyName": "Take the name too when copying a token",
+			"SaveCurrent": "Save current look",
+			"Remove": "Remove look",
+			"RemoveConfirm": "Remove the look <strong>{label}</strong>?",
+			"NoTarget": "Target the token whose look you want to copy.",
+			"NoToken": "The character has no token on this scene."
+		}
+	}
+}
